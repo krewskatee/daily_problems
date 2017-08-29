@@ -17,7 +17,7 @@ end
 
 
 
-# Driver code - don't touch anything below this line.
+# Driver codve - don't touch anything below this line.
 puts "TESTING the Rectange class..."
 puts
 
