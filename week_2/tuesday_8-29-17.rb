@@ -7,6 +7,6 @@ movies = [
 
 filtered_movies = []
 
-filtered_movies = movies.select{ |movie| movie[:title].downcase.include?("b") }.map { |movie| movie[:id] }
+filtered_movies = movies.select{ |movie| movie[:title].downcase.include?("b") }.map{ |movie| movie[:id] }
 
 p filtered_movies
