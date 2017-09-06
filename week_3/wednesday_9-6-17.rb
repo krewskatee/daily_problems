@@ -1,13 +1,9 @@
-input = "burly"
-
-def mutation?(string1, string2)
-  string_arr = string2.split("")
+def mutation?(string_1, string_2)
+  string_arr = string_2.split("")
   string_arr.each do |x|
-    unless string1.include?(x)
-      return false
-    end
+    return false unless string_1.include?(x)
   end
-  return true
+  true
 end
 
 p mutation?('burly', "ruby")
