@@ -1,7 +1,7 @@
-def sum_of_range(arr)
-  arr[0], arr[1] = arr[1], arr[0] if arr[1] < arr[0]
+def sum_of_range(array)
+  array[0], array[1] = array[1], array[0] if array[1] < array[0]
   sum = 0
-  (arr[0]..arr[1]).each do |n|
+  (array[0]..array[1]).each do |n|
     sum += n
   end
   sum
