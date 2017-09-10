@@ -1,4 +1,4 @@
-false
-nil
-true
-!5
+SELECT *
+FROM recipes
+ORDER BY id DESC
+LIMIT 1;

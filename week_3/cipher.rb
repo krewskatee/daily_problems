@@ -44,7 +44,7 @@ def decoded_cipher(coded_message)
         found_match = true
         break
       elsif (0..9).to_a.include?(x) # Try this out in IRB. What does   " (0..9).to_a "    do?
-        decoded_sentence << x
+        
         found_match = true
         break
       end
