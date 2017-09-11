@@ -3,4 +3,4 @@ people = [
   {"name" => "Majora", "age" => 28},
   {"name" => "Danilo", "age" => 45}
 ]
-p people.sort{ |v| v["age"] }
+p people.sort{ |k, v| k["age"] <=> v["age"] }
