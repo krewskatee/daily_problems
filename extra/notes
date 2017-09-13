@@ -1,0 +1,5 @@
+Association
+-Normalization - Normalizing the table
+-One to many relationship
+-belongs_to(foreign key is on this table)
+-has_many
