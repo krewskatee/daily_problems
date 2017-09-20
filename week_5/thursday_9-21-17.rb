@@ -1,20 +1,20 @@
 def find_the_most_letter_a(array)
-  max = 0
-  highest_word = ""
-  array.each do |e|
-    highest = 0
-    arr = e.split("")
-    arr.each do |l|
-      if l == "a"
-        highest += 1
+  max_a_count = 0
+  letter_a_count_word = ""
+  array.each do |word|
+    letter_a_count = 0
+    arr = word.split("")
+    arr.each do |letter|
+      if letter == "a"
+        letter_a_count += 1
       end
-      if highest > max
-        max = highest
-        highest_word = e
+      if letter_a_count > max_a_count
+        max_a_count = letter_a_count
+        letter_a_count_word = word
       end
     end
   end
-  highest_word
+  letter_a_count_word
 end
 
 p find_the_most_letter_a(["alphabet", "aardvark", "anarchy"])  #=> "aardvark"
