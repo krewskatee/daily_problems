@@ -3,3 +3,7 @@ Association
 -One to many relationship
 -belongs_to(foreign key is on this table)
 -has_many
+
+Many-to-Many relationship
+- document associations between tables
+- Name with both tables
