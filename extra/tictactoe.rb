@@ -42,16 +42,6 @@ def winner_search
      [@board[0],@board[4],@board[8]],[@board[2],@board[4],@board[6]]]
 end
 
-def winner_search_algo(board)
-    [[board[0],board[1],board[2]],[board[3],board[4],board[5]],
-     [board[6],board[7],board[8]],[board[0],board[3],board[6]],
-     [board[1],board[4],board[7]],[board[2],board[5],board[8]],
-     [board[0],board[4],board[8]],[board[2],board[4],board[6]]]
-end
-
-def win_checker(player)
-
-end
 
 def winner_marker_player?
     if winner_search.include? ["#{PLAYER_MARKER}","#{PLAYER_MARKER}","#{PLAYER_MARKER}"]
@@ -60,19 +50,6 @@ def winner_marker_player?
     end
 end
 
-def winner_marker_player_algo(board)
-    if winner_search_algo(board).include? ["#{PLAYER_MARKER}","#{PLAYER_MARKER}","#{PLAYER_MARKER}"]
-        #puts "#{PLAYER_MARKER} is the winner!"
-        return true
-    end
-end
-
-def ai_marker_player_algo(board)
-    if winner_search_algo(board).include? ["#{AI_MARKER}","#{AI_MARKER}","#{AI_MARKER}"]
-        #puts "#{AI_MARKER} is the winner!"
-        return true
-    end
-end
 
 def ai_marker_player?
     if winner_search.include? ["#{AI_MARKER}","#{AI_MARKER}","#{AI_MARKER}"]
@@ -128,11 +105,11 @@ end
 def aiBestMove(board, player)
     scores = []
     moves = []
-    if winner_marker_player_algo(board)
+    if winner_marker_player?
         return -1
     end
 
-    if ai_marker_player_algo(board)
+    if ai_marker_player?
         return 1
     end
 
@@ -146,17 +123,8 @@ def aiBestMove(board, player)
     for x in 0..8
         if (board[x] == " ")
             new_board_state = board.dup
-            new_board_state[x] = "#{player}"
-            if player == AI_MARKER
-                player = PLAYER_MARKER
-            else
-                player = AI_MARKER
-            end
-
+            p new_board_state[x] = "#{player}"
             move_val = aiBestMove(new_board_state, player)
-            scores.push(move_val)
-            moves.push(x)
-            print(scores[0])
         end
     end
 end
